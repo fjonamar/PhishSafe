@@ -1,0 +1,269 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+/* Header and Footer */
+header, footer {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #ff4081;
+}
+
+/* Main Section */
+main {
+    padding: 2rem 5%;
+    background-color: #1a1a1a;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #232323;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.416);
+}
+
+/* Heading Styles */
+h2, h3 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* Phishing Quiz Section */
+.gmail-inbox-style {
+    font-family: 'Poppins', sans-serif;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.email-item {
+    background-color: #222;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(255, 252, 252, 0.549);
+    height: 300px; 
+    overflow-y: auto; 
+}
+
+
+.email-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.email-subject {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #f1f1f1;
+}
+
+.email-time, .email-from {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.email-content {
+    font-size: 1rem;
+    color: #d3d3d3;
+}
+
+.email-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.action-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+#phishing-btn {
+    background-color: #ff4081;
+    color: white;
+}
+
+#genuine-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+#next-btn {
+    background-color: #008CBA;
+    color: white;
+}
+
+/* Feedback Styles */
+.feedback {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: none;
+}
+
+.correct-feedback {
+    background-color: #4caf50;
+    color: white;
+}
+
+.incorrect-feedback {
+    background-color: #ff4081;
+    color: white;
+}
+
+/* Role Selection Section */
+#role-selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #121212;
+    padding: 2rem;
+    text-align: center;
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+
+#role-selection h2 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+#role-selection p {
+    font-size: 1.2rem;
+    color: #bbbbbb;
+    margin-bottom: 3rem;
+}
+
+#role-selection button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    margin: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#role-selection button:hover {
+    background-color: #004d40;
+    transform: translateY(-3px);
+}
+
+/* Tips Section */
+#tips {
+    background-color: #f1f1f1;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#tips ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tips li {
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+#tips li:hover {
+    transform: translateY(-2px);
+}
+
+#tips li strong {
+    color: #d32f2f;
+}
+
+/* Contact Us Form */
+.contact-us input, .contact-us textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #f1f1f1;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.contact-us button {
+    background-color: #ff4081;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-us button:hover {
+    background-color: #e91e63;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1c1c;
+    color: #cccccc;
+    padding: 1rem;
+}
+
+footer p {
+    font-size: 1rem;
+    text-align: center;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishSafe</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+<header>
+    <a href="#what-is-phishing">What is Phishing?</a>
+    <a href="#role-selection">Test your skills</a>
+    <a href="#tips">Tips</a>
+    <a href="#contact-us">Contact Us</a>
+</header>
+
+<main>
+    <section id="what-is-phishing" style="height: 100vh; position: relative; background-image: url(bg.jpg); background-size: cover; background-position: center; font-family: Arial, sans-serif;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #f1f1f1; background-color: rgba(0, 0, 0, 0.5); padding: 2rem 3rem; border-radius: 8px; width: 90%; max-width: 900px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+            <h2 style="color: #f1f1f1; font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">What is Phishing?</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">Phishing is the practice of tricking victims into revealing confidential data through scam emails, texts, or phone calls, and it's one of the biggest headaches for cybersecurity professionals.</p>
+            <p style="font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">In March 2024, a phishing attack targeted customers of the popular payment service, PayPal. The attackers sent emails claiming that the recipients' accounts were flagged for suspicious activity and required immediate verification. The emails contained a link to a fake PayPal login page designed to look identical to the real one. After users entered their credentials, the attackers accessed their accounts and performed unauthorized transactions. Over 100,000 users worldwide were affected, with millions of dollars in transactions stolen. PayPal issued a statement warning users to be cautious of unsolicited emails and emphasized the importance of verifying the sender’s email address and URLs before clicking any links.</p>
+        </div>
+    </section>
+    
+
+    
+    <section id="role-selection" style="background-image: url('ph.png'); background-size: 100% auto; background-position: center; height: 60vh; position: relative;">
+        <h2 style="color: #f1f1f1; font-size: 2rem; font-weight: bold; background-color: #004d4037; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">How safe is your inbox? Try to spot phishing emails.</h2>
+        <p style="color: #ffffff; font-size: 2rem; margin-bottom: 20px; font-weight: bolder;">
+            Please select your role to start:
+        </p>
+        <div style="display: flex; justify-content: center; gap: 10px; width: 100%; margin-top: 20px;">
+            <button onclick="startQuiz('student')" class="action-btn" style="padding: 10px 20px;">Student</button>
+            <button onclick="startQuiz('employee')" class="action-btn" style="padding: 10px 20px;">Employee</button>
+            <button onclick="startQuiz('ceo')" class="action-btn" style="padding: 10px 20px;">CEO</button>
+        </div>
+    </section>
+    
+    <section id="quiz-section" class="gmail-inbox-style" style="display: none;">
+        <div id="email-display" class="email-item">
+            <div class="email-info">
+                <span id="email-subject" class="email-subject">Subject: </span>
+                <span id="email-time" class="email-time">Date: </span>
+                <span id="email-from" class="email-from">From: </span>
+            </div>
+            <div id="email-content" class="email-content"></div>
+            <div class="feedback" id="feedback"></div>
+        </div>
+        <div class="email-actions">
+            <button id="phishing-btn" onclick="handleAnswer(true)" class="action-btn">Phishing</button>
+            <button id="genuine-btn" onclick="handleAnswer(false)" class="action-btn">Genuine</button>
+            <button id="next-btn" onclick="nextEmail()" disabled class="action-btn">Next</button>
+        </div>
+        <div class="score-board">
+            <p>Correct: <span id="correct">0</span> | Remaining: <span id="remaining">10</span></p>
+        </div>
+    </section>
+
+    <section id="restart-section" class="center" style="display: none;">
+    <h1>Thank you for your effort!</h1>
+    <p>Your Score: <span id="final-score">0</span> / <span id="total-questions">0</span></p>
+    <p>Would you like to start again with a different role?</p>
+    
+    <button onclick="restartQuiz()" class="restart-btn" 
+        style="background-color: #00796b; color: white; padding: 12px 30px; font-size: 1.1rem; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease;">
+        Start again
+    </button>
+</section>
+
+
+    <section id="tips" style="background-color: #f4f7f9; padding: 30px 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #2c3e50; font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 20px;">How to Identify Phishing Scams</h2>
+        <p style="color: #34495e; font-size: 1rem; text-align: center; margin-bottom: 20px;">
+            Protect yourself from online threats by following these cybersecurity tips to spot phishing attempts before they can cause harm.
+        </p>
+        <ul style="list-style-type: none; padding: 0; font-size: 1rem; line-height: 1.8; color: #7f8c8d;">
+            <li style="background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+                <strong style="color: #e74c3c;">Verify Sender Email Address:</strong> Always check the sender’s email carefully for small inconsistencies, such as a misspelling or odd domain.
+            </li>
+            <li style="background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+                <strong style="color: #e74c3c;">Hover Over Links:</strong> Hover your mouse over links to preview their destination URL before clicking. Ensure the URL is from a trusted source.
+            </li>
+            <li style="background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+                <strong style="color: #e74c3c;">Beware of Urgency or Threats:</strong> Phishing emails often use alarming language to pressure you into acting quickly. Legitimate companies won’t demand immediate actions.
+            </li>
+            <li style="background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+                <strong style="color: #e74c3c;">Check for Grammar and Spelling Errors:</strong> Professional emails are usually free of mistakes. Phishing emails often contain typos, incorrect phrasing, and poor formatting.
+            </li>
+            <li style="background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+                <strong style="color: #e74c3c;">Never Share Sensitive Information:</strong> Avoid sharing personal or financial information over email. Always contact the company directly through their official website.
+            </li>
+            <li style="background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+                <strong style="color: #e74c3c;">Use Multi-Factor Authentication:</strong> Enabling multi-factor authentication (MFA) adds an extra layer of security, making it harder for attackers to gain access.
+            </li>
+        </ul>
+    </section>
+    
+
+    <section id="contact-us" class="contact-us" style="background-color: #f4f7f9; padding: 40px 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #2c3e50; font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 20px;">Contact Us</h2>
+        <p style="color: #34495e; font-size: 1.1rem; text-align: center; margin-bottom: 30px;">
+            Have you encountered a phishing attempt or need help securing your accounts? Reach out to our cybersecurity team for assistance.
+        </p>
+        <form id="contact-form" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);" onsubmit="submitForm(event)">
+            <div style="margin-bottom: 20px;">
+                <label for="name" style="display: block; font-weight: 600; color: #2c3e50; margin-bottom: 8px;">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required style="width: 100%; padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"/>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="email" style="display: block; font-weight: 600; color: #2c3e50; margin-bottom: 8px;">Your Email</label>
+                <input type="email" id="email" placeholder="Enter your email address" required style="width: 100%; padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"/>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="message" style="display: block; font-weight: 600; color: #2c3e50; margin-bottom: 8px;">Your Message</label>
+                <textarea id="message" rows="5" placeholder="Describe the phishing attempt or issue you're facing" required style="width: 100%; padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"></textarea>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" style="background-color: #e74c3c; color: #fff; padding: 12px 20px; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </section>
+    
+</main>
+
+<footer>
+    <p>&copy; 2025 Phishing awareness page. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
